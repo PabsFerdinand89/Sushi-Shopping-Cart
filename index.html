@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Altcademy: Stock Portfolio Example</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center my-4">Specialty Sushi</h1>
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Price(USD)</th>
+                <th scope="col">Quantity</th>
+                <th scope="col" id="removeBtnCol"></th>
+                <th scope="col" id="subtotal">Subtotal</th>
+                <th scope="col" id="removeCol"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="item name">California Roll 🍣</td>
+                <td class="price">7.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Lemon Roll 🍋</td>
+                <td class="price">7.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Firecracker Roll 🧨</td>
+                <td class="price">9.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+                <td class="item name">Shrimp Tempura Roll 🍤</td>
+                <td class="price">12.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Dragon Roll 🐉</td>
+                <td class="price">11.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Spider Roll 🕷️</td>
+                <td class="price">12.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Rainbow Roll 🌈</td>
+                <td class="price">10.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">Spicy Tuna Roll 🌶️🐟</td>
+                <td class="price">11.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+              <tr>
+                <td class="item name">King Crab Roll 👑🦀</td>
+                <td class="price">12.99</td>
+                <td class="quantity"><input type="number" value="0" /></td>
+                <td><button class="btn btn-light btn-sm remove">remove</button></td>
+                <td class="subtotal"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form class="col-12 mt-2 mb-4" id="addItem">
+          <input class="mx-2" name="name" type="text" placeholder="Custom Roll" required/>
+          <input class="mx-2" name="quantity" type="number" placeholder="Quantity"/>
+          <span class="price">Price: 15</span>
+          <button class="btn btn-primary btn-sm" id="addBtn">add</button>
+        </form>
+
+        <div class="col-12 col-md-4">
+          <h4>Subtotal: $ 
+            <span id="finalSubtotal"></span>
+          </h4>
+        </div>
+        <div class="col-12 col-md-6">
+          <h3>Total: $  
+            <span id="finalTotal"></span>
+          </h3>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
