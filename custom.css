@@ -11,18 +11,8 @@ body {
     border-color: black;
 }
 
-img {
-    width: 70px;
-}
-
-img:hover{
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-
 button:hover{
     color: #d4b30a;
-    border: #34120a solid 1px;
+    border: #34120a solid 2px;
     background:#fff;
   }
