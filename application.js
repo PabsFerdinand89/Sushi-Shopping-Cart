@@ -54,8 +54,8 @@ var updateShoppingCart = function() {
             var price = $(this).children('.price').val();
 
             $('tbody').append('<tr>' + 
-                '<td class="item name">'${item}'</td>' +
-                '<td class="price">'$${price}'</td>' + 
+                '<td class="item name">' + item + '</td>' +
+                '<td class="price">$' + price + '</td>' + 
                 '<td class="quantity"><input type="number" value="1"/></td>' + 
                 '<td><button class="btn btn-light btn-sm remove">remove</button></td>' +
                 '<td class="subtotal"></td>' + 
