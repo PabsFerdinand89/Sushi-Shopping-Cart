@@ -1,4 +1,5 @@
 var AddUpSubtotal = function (ele) {
+    console.log(ele)
     var quantity = Number(`${$(ele).find(".quantity input").val()}`);
     var price = parseFloat(Math.round($(ele).children(".price").text() * 100) / 100).toFixed(2);
 
@@ -25,8 +26,8 @@ var updateShoppingCart = function() {
     if (allSubtotals.length == 0) {
         $('#finalTotal').html(`$--.--`);
     } else {
-        var cartTotal = allSubtotals.reduce(sum);
-        $('#finalTotal').html(`$${parseFloat(Math.round(cartTotal * 100) / 100).toFixed(2)}`
+        var cartTotal = allSubtotals.reduce(sum) +
+        $('#finalTotal').html(`${parseFloat(Math.round(cartTotal * 100) / 100).toFixed(2)}`
         );
       };
     };
@@ -42,21 +43,22 @@ var updateShoppingCart = function() {
 
         var timeout;
             $('body').on('input', 'tr input', function () {
+                console.log('input');
                 clearTimeout(timeout);
                 timeout = setTimeout(function () {
                     updateShoppingCart();
                 }, 500);
             });
 
-        $('#addItem').on('add', function (event) {
+        $('#addItem').on('submit', function (event) {
             event.preventDefault();
-            var itemName = $(this).children('.itemName').val();
+            var item = $(this).children('.item').val();
             var price = $(this).children('.price').val();
 
             $('tbody').append(`<tr>` + 
-                `<td class="itemName">` + itemName + `</td>` +
+                `<td class="itemName">` + item + `</td>` +
                 `<td class="price">` + price + `</td>` + 
-                `<td class="quantity"><input type="number" value="1"/></td>` + 
+                `<td class="quantity"><input type="number" value="0"/></td>` + 
                 `<td><button class="btn btn-light btn-sm remove">remove</button></td>` +
                 `<td class="subtotal"></td>` + 
                 `</tr>`);         
@@ -65,8 +67,4 @@ var updateShoppingCart = function() {
             $(this).children('.itemName').val('');
             $(this).children('.price').val('');
         });
-    });  
-
-
-
-
+    });
