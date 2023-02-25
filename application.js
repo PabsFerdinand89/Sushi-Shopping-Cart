@@ -50,19 +50,23 @@ var updateShoppingCart = function() {
 
         $('#addItem').on('add', function (event) {
             event.preventDefault();
-            var item = $(this).children('.item name').val();
+            var itemName = $(this).children('.itemName').val();
             var price = $(this).children('.price').val();
 
-            $('tbody').append('<tr>' + 
-                '<td class="item name">'${item}'</td>' +
-                '<td class="price">'$${price}'</td>' + 
-                '<td class="quantity"><input type="number" value="1"/></td>' + 
-                '<td><button class="btn btn-light btn-sm remove">remove</button></td>' +
-                '<td class="subtotal"></td>' + 
-                '</tr>');           
+            $('tbody').append(`<tr>` + 
+                `<td class="itemName">` + itemName + `</td>` +
+                `<td class="price">` + price + `</td>` + 
+                `<td class="quantity"><input type="number" value="1"/></td>` + 
+                `<td><button class="btn btn-light btn-sm remove">remove</button></td>` +
+                `<td class="subtotal"></td>` + 
+                `</tr>`);         
             
             updateShoppingCart();
-            $(this).children('.item name').val('');
+            $(this).children('.itemName').val('');
             $(this).children('.price').val('');
         });
     });  
+
+
+
+
