@@ -26,6 +26,7 @@ var updateShoppingCart = function() {
     if (allSubtotals.length == 0) {
         $('#finalTotal').html(`$--.--`);
     } else {
+
         var cartTotal = allSubtotals.reduce(sum);
         $('#finalTotal').html(`${parseFloat(Math.round(cartTotal * 100) / 100).toFixed(2)}`
         );
@@ -43,7 +44,6 @@ var updateShoppingCart = function() {
 
         var timeout;
             $('body').on('input', 'tr input', function () {
-                console.log('input')
                 clearTimeout(timeout);
                 timeout = setTimeout(function () {
                     updateShoppingCart();
@@ -64,7 +64,7 @@ var updateShoppingCart = function() {
                 '</tr>');           
             
             updateShoppingCart();
-            $(this).children('.item name').val('');
+            $(this).children('.itemName').val('');
             $(this).children('.price').val('');
         });
-    });  
+    });
