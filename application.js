@@ -26,7 +26,8 @@ var updateShoppingCart = function() {
     if (allSubtotals.length == 0) {
         $('#finalTotal').html(`$--.--`);
     } else {
-        var cartTotal = allSubtotals.reduce(sum) +
+
+        var cartTotal = allSubtotals.reduce(sum);
         $('#finalTotal').html(`${parseFloat(Math.round(cartTotal * 100) / 100).toFixed(2)}`
         );
       };
@@ -43,7 +44,6 @@ var updateShoppingCart = function() {
 
         var timeout;
             $('body').on('input', 'tr input', function () {
-                console.log('input');
                 clearTimeout(timeout);
                 timeout = setTimeout(function () {
                     updateShoppingCart();
@@ -55,13 +55,13 @@ var updateShoppingCart = function() {
             var item = $(this).children('.item').val();
             var price = $(this).children('.price').val();
 
-            $('tbody').append(`<tr>` + 
-                `<td class="itemName">` + item + `</td>` +
-                `<td class="price">` + price + `</td>` + 
-                `<td class="quantity"><input type="number" value="0"/></td>` + 
-                `<td><button class="btn btn-light btn-sm remove">remove</button></td>` +
-                `<td class="subtotal"></td>` + 
-                `</tr>`);         
+            $('tbody').append('<tr>' + 
+                '<td class="item name">' + item + '</td>' +
+                '<td class="price">' + price + '</td>' + 
+                '<td class="quantity"><input type="number" value="0"/></td>' + 
+                '<td><button class="btn btn-light btn-sm remove">remove</button></td>' +
+                '<td class="subtotal"></td>' + 
+                '</tr>');           
             
             updateShoppingCart();
             $(this).children('.itemName').val('');
